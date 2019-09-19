@@ -23,6 +23,7 @@ ir na IDE do Visual Studio ou no Console do .NET Core (como foi neste projeto) i
 biblioteca do SQL Server e o pacote Tools. O comando SQL está no diretório taskApi/SQL.
 Depois será necessário instalar as dependências do Angular com o gerenciador de pacotes NPM na pasta ClientApp. Após a instalação dos pa-
 cotes do Angular, ir na pasta taskApi e rodar o comando dotnet build e, por fim, dotnet run.
+
 ...
 cd taskApi\ClientApp
 npm install
