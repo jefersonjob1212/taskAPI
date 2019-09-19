@@ -1,0 +1,42 @@
+<h1>Task List</h1>
+
+<p>All the tasks i have to do.</p>
+
+<div *ngIf="!tasks">
+  <div class="alert alert-info" role="alert">
+    No Tasks created.
+  </div>
+</div>
+<p>
+  <button class="btn btn-primary" (click)="create()">Create</button>
+</p>
+<div *ngIf="tasks">
+  <table class='table table-bordered table-striped' *ngIf="tasks">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Descript</th>
+        <th>Done</th>
+        <th>Options</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let task of tasks">
+        <td>{{ task.id }}</td>
+        <td>{{ task.descript }}</td>
+        <td>
+          <input type="checkbox" [checked]="task.done" (change)="changeDone(task)">
+        </td>
+        <td>
+            <button class="btn btn-success" (click)="edit(task.id)">
+                Editar
+            </button>
+            &nbsp;
+            <button class="btn btn-danger" (click)="delete(task)">
+                Excluir
+            </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
